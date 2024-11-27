@@ -1,24 +1,34 @@
 #include "Deck.h"
+#include <vector>
 #include <iostream>
 using namespace std;
 
 int main() {
-    Deck deck;
-    deck.shuffleDeck();
+    Deck deck;                // Create a new deck
+    deck.shuffleDeck();       // Shuffle the deck
 
-    cout << "Dealing two cards to the player:" << endl;
-    Card playerCard1 = deck.dealCard();
-    Card playerCard2 = deck.dealCard();
+    vector<Card> playerHand;  // Player's hand
+    vector<Card> dealerHand;  // Dealer's hand
 
-    playerCard1.displayCard();
-    playerCard2.displayCard();
+    // Deal two cards to the player
+    playerHand.push_back(deck.dealCard());
+    playerHand.push_back(deck.dealCard());
 
-    cout << "\nDealing two cards to the dealer:" << endl;
-    Card dealerCard1 = deck.dealCard();
-    Card dealerCard2 = deck.dealCard();
+    // Deal two cards to the dealer
+    dealerHand.push_back(deck.dealCard());
+    dealerHand.push_back(deck.dealCard());
 
-    dealerCard1.displayCard();
-    dealerCard2.displayCard();
+    // Display the player's hand
+    cout << "Player's hand:" << endl;
+    for (const auto& card : playerHand) {
+        card.displayCard();
+    }
+
+    // Display the dealer's hand
+    cout << "\nDealer's hand:" << endl;
+    for (const auto& card : dealerHand) {
+        card.displayCard();
+    }
 
     return 0;
 }
