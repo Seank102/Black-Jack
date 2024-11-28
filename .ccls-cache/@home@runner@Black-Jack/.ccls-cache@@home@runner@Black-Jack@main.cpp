@@ -202,3 +202,8 @@ int main() {
 
     cout << "Thanks for playing!" << endl;
     return 0;
+<<<<<<< HEAD
+}
+=======
+} 
+>>>>>>> 792680dfcefe57dd451b4a33a5409a76cedbcb85
